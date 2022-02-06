@@ -14,6 +14,10 @@ export UNTRACKED_ZSHRC=~/.untracked/zshrc
 # for pipx
 export PATH="$PATH:/home/andrew/.local/bin"
 
+# for pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+
 
 # McFly settings
 export MCFLY_KEY_SCHEME=vim
