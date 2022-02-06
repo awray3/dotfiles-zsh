@@ -1,7 +1,12 @@
+# Core aliases
 alias vim="nvim"
-alias top="vtop --theme=wizard" # TODO: change vtop theme? remove vtop?
-alias jsoncat="/usr/bin/python -m json.tool"
+alias top="htop"
 
 ## Refreshing things
 alias reloadzsh="source ~/.zshrc"
-alias reloadvim="vim +PlugClean +PlugInstall +qall"
+alias reloadvim="nvim +PackerSync"
+
+## Opening configs
+alias zshconf="vim ~/.zshrc"
+alias vimconf="vim $NEOHOME/init.vim"
+alias sshconf="vim ~/.ssh/config"
