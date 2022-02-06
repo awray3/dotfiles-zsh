@@ -1,7 +1,0 @@
-*
-!/.gitignore.d/zsh
-!/.zsh/aliases.zsh
-!/.zsh/exports.zsh
-!/.zsh/fzf-settings.zsh
-!/.zsh/zshrc
-!/.zshrc
