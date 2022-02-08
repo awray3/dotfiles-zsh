@@ -7,6 +7,6 @@ alias reloadzsh="source ~/.zshrc"
 alias reloadvim="nvim +PackerSync"
 
 ## Opening configs
-alias zshconf="vim ~/.zshrc"
-alias vimconf="vim $NEOHOME/init.vim"
+alias zshconf="vim $ZSH_DIR/zshrc"
+alias vimconf="vim ~/.config/neovim-dotfiles/init.lua"
 alias sshconf="vim ~/.ssh/config"
