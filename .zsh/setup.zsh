@@ -120,6 +120,14 @@ then
     alias rangerconf="vim $CONFIG/ranger/rifle.conf"
 fi
 
+## zsh-autosuggestions
+if ! [[ -d "$ZSH_DIR/zsh-autosuggestions" ]]
+then 
+  git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_DIR/zsh-autosuggestions
+else
+  source $ZSH_DIR/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
+
 
 # Set up untracked files
 export LOCAL_ONLY_CONFIG="$HOME/.local_only"
