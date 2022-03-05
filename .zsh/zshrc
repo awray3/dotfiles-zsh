@@ -21,6 +21,13 @@ bindkey -v
 # Initialize oh-my-zsh. Everything above this line needs to happen before oh-my-zsh is loaded! Weird!
 source $ZSH/oh-my-zsh.sh
 
+
+if command -v aws &>/dev/null
+then 
+  echo "found aws; loading completion"
+  complete -C '/usr/local/bin/aws_completer' aws
+fi
+
 if $DEBUG_CONFIG_FLAG
 then 
   zprof
