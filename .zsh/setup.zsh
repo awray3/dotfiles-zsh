@@ -145,3 +145,18 @@ then
     echo "It appears you have configs in ~/.untracked on this machine."
     echo "Migrate to new configuration by renaming it to ~/.local_only."
 fi
+
+# Sets up node version manager (nvm)
+if [[ -d "$HOME/.nvm" ]]
+then
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+  if $DEBUG_CONFIG_FLAG
+  then 
+    echo "nvm is installed."
+  fi
+elif $DEBUG_CONFIG_FLAG
+then 
+  echo "nvm is not installed."
+fi
