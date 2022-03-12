@@ -27,6 +27,8 @@ then
   complete -C '/usr/local/bin/aws_completer' aws
 fi
 
+eval "$(starship init zsh)"
+
 if $DEBUG_CONFIG_FLAG
 then 
   zprof
