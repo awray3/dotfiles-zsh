@@ -1,7 +1,5 @@
 ZSH_THEME="half-life" # set by `omz`
 
-export DEBUG_CONFIG_FLAG=false
-
 if $DEBUG_CONFIG_FLAG
 then 
   echo "Loading config in debug mode."
