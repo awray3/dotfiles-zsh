@@ -1,6 +1,6 @@
 ZSH_THEME="half-life" # set by `omz`
 
-if $DEBUG_CONFIG_FLAG
+if [[ -v DEBUG_CONFIG_FLAG ]]
 then 
   echo "Loading config in debug mode."
   zmodload zsh/zprof
