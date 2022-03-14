@@ -1,3 +1,10 @@
+#            _              
+#    _______| |__  _ __ ___ 
+#   |_  / __| '_ \| '__/ __|
+#  _ / /\__ \ | | | | | (__ 
+# (_)___|___/_| |_|_|  \___|
+#
+
 ZSH_THEME="half-life" # set by `omz`
 
 if [[ -v DEBUG_CONFIG_FLAG ]]
@@ -8,27 +15,21 @@ fi
 source $HOME/.zsh/exports.zsh # You want this first since it has a lot of exports.
 source $ZSH_DIR/aliases.zsh
 source $ZSH_DIR/fzf-settings.zsh
-source $ZSH_DIR/setup.zsh
+source $ZSH_DIR/pre-omz.zsh
 
 plugins=(git brew conda-zsh-completion vi-mode)
 
 # enables vim keybindings
 bindkey -v
 
-
-# Initialize oh-my-zsh. Everything above this line needs to happen before oh-my-zsh is loaded! Weird!
+#   ___  __  __ _____  ____                               _ 
+#  / _ \|  \/  |__  / / ___|  ___  _   _ _ __ ___ ___  __| |
+# | | | | |\/| | / /  \___ \ / _ \| | | | '__/ __/ _ \/ _` |
+# | |_| | |  | |/ /_   ___) | (_) | |_| | | | (_|  __/ (_| |
+#  \___/|_|  |_/____| |____/ \___/ \__,_|_|  \___\___|\__,_|
+# Initialize oh-my-zsh. 
 source $ZSH/oh-my-zsh.sh
-
-
-if command -v aws &>/dev/null
-then 
-  complete -C '/usr/local/bin/aws_completer' aws
-fi
-
-if command -v starship &>/dev/null
-then
-  eval "$(starship init zsh)"
-fi
+source $ZSH/post-omz.zsh
 
 if [[ -v DEBUG_CONFIG_FLAG ]]
 then 

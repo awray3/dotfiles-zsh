@@ -1,14 +1,18 @@
-# This file stores setup config for many different tools.
-# Currently supported:
+#                        ___  __  __ _____
+#  _ __  _ __ ___       / _ \|  \/  |__  /
+# | '_ \| '__/ _ \_____| | | | |\/| | / / 
+# | |_) | | |  __/_____| |_| | |  | |/ /_ 
+# | .__/|_|  \___|      \___/|_|  |_/____|
+# |_|                                     
+# This file stores setup config for pre-omz commands.
+# Currently:
 # z
 # conda-zsh-completion
 # pipx
 # poetry
-# pyenv
 # kitty
-# mcfly
-# direnv
 # ranger
+# local-only config
 
 
 # Install z
@@ -46,44 +50,6 @@ if test -e "/Applications/kitty.app/Contents/Resources/kitty/shell-integration/k
     alias kittyconf="vim $KITTYHOME/kitty.conf"
 fi
 # END_KITTY_SHELL_INTEGRATION
-
-# Set up Mcfly
-if command -v mcfly &> /dev/null
-then 
-  export MCFLY_KEY_SCHEME=vim
-  export MCFLY_FUZZY=true
-  eval "$(mcfly init zsh)"
-else 
-  if [[ -v DEBUG_CONFIG_FLAG ]]
-  then 
-    echo "Mcfly is not installed. You can install mcfly by running the below command."
-    echo "curl -LSfs https://raw.githubusercontent.com/cantino/mcfly/master/ci/install.sh | sudo sh -s -- --git cantino/mcfly"
-  fi
-fi
-
-# set up direnv
-if command -v direnv &> /dev/null
-then 
-  eval "$(direnv hook zsh)"
-else
-  if [[ -v DEBUG_CONFIG_FLAG ]]
-  then
-    echo "direnv not installed."
-  fi
-fi
-
-# set up Pyenv
-if [[ -x "$HOME/.pyenv/bin/pyenv" ]]
-then
-  export PYENV_ROOT="$HOME/.pyenv"
-  export PATH="$PYENV_ROOT/bin:$PATH"
-  eval "$(pyenv init --path)"
-  eval "$(pyenv init -)"
-else
-  if [[ -v DEBUG_CONFIG_FLAG ]]
-  then echo "pyenv was not found at $HOME/.pyenv as expected."
-  fi
-fi
 
 ## for pipx
 if [[ -x "$HOME/.local/bin/pipx" ]]
