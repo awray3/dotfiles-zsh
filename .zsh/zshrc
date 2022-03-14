@@ -30,7 +30,7 @@ then
   eval "$(starship init zsh)"
 fi
 
-if $DEBUG_CONFIG_FLAG
+if [[ -v DEBUG_CONFIG_FLAG ]]
 then 
   zprof
 fi

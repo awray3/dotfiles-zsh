@@ -54,7 +54,7 @@ then
   export MCFLY_FUZZY=true
   eval "$(mcfly init zsh)"
 else 
-  if $DEBUG_CONFIG_FLAG
+  if [[ -v DEBUG_CONFIG_FLAG ]]
   then 
     echo "Mcfly is not installed. You can install mcfly by running the below command."
     echo "curl -LSfs https://raw.githubusercontent.com/cantino/mcfly/master/ci/install.sh | sudo sh -s -- --git cantino/mcfly"
@@ -66,7 +66,7 @@ if command -v direnv &> /dev/null
 then 
   eval "$(direnv hook zsh)"
 else
-  if $DEBUG_CONFIG_FLAG
+  if [[ -v DEBUG_CONFIG_FLAG ]]
   then
     echo "direnv not installed."
   fi
@@ -80,7 +80,7 @@ then
   eval "$(pyenv init --path)"
   eval "$(pyenv init -)"
 else
-  if $DEBUG_CONFIG_FLAG
+  if [[ -v DEBUG_CONFIG_FLAG ]]
   then echo "pyenv was not found at $HOME/.pyenv as expected."
   fi
 fi
@@ -93,7 +93,7 @@ then
   autoload -U bashcompinit && bashcompinit
   eval "$(register-python-argcomplete pipx)"
 else
-  if $DEBUG_CONFIG_FLAG
+  if [[ -v DEBUG_CONFIG_FLAG ]]
   then echo "pipx not installed."
   fi
 fi
@@ -103,13 +103,13 @@ if [[ -d "$HOME/.poetry/bin" ]]
 then 
   export PATH="$HOME/.poetry/bin:$PATH"
 else
-  if $DEBUG_CONFIG_FLAG
+  if [[ -v DEBUG_CONFIG_FLAG ]]
   then echo "Poetry not installed."
   fi
 fi
 
 ## Ripgrep
-if ! command -v rg &> /dev/null && $DEBUG_CONFIG_FLAG
+if ! command -v rg &> /dev/null && [[ -v DEBUG_CONFIG_FLAG ]]
 then
   echo "Missing ripgrep. You can probably sudo apt-get ripgrep or brew install ripgrep."
 fi
@@ -152,11 +152,11 @@ then
   export NVM_DIR="$HOME/.nvm"
   [ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-  if $DEBUG_CONFIG_FLAG
+  if [[ -v DEBUG_CONFIG_FLAG ]]
   then 
     echo "nvm is installed."
   fi
-elif $DEBUG_CONFIG_FLAG
+elif [[ -v DEBUG_CONFIG_FLAG ]]
 then 
   echo "nvm is not installed."
 fi
