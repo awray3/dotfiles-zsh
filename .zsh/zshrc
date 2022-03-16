@@ -29,7 +29,7 @@ bindkey -v
 #  \___/|_|  |_/____| |____/ \___/ \__,_|_|  \___\___|\__,_|
 # Initialize oh-my-zsh. 
 source $ZSH/oh-my-zsh.sh
-source $ZSH/post-omz.zsh
+source $ZSH_DIR/post-omz.zsh
 
 if [[ -v DEBUG_CONFIG_FLAG ]]
 then 
