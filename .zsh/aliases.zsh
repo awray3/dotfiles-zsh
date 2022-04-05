@@ -28,4 +28,4 @@ alias jt="jupytext"
 # intended to be used on a myst markdown file
 alias jtNewSync="jupytext --set-formats myst,ipynb"
 
-alias new_project="cookiecutter gh:awray3/true-neutral-cookiecutter"
+alias new_project="cookiecutter gh:awray3/new-project-cookiecutter"
