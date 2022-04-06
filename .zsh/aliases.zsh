@@ -1,6 +1,6 @@
 # Core aliases
 alias vim="nvim"
-alias top="htop"
+alias top="btop"
 
 ## Refreshing things
 alias reloadzsh="source ~/.zshrc"
