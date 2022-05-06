@@ -8,7 +8,7 @@ alias reloadvim="nvim +PackerSync"
 
 ## Opening configs
 con () {
-    if ! [[ -z "$VSCODE" ]]; then
+    if [[ -v VSCODE ]]; then
          eval "$VSCODE $DOTFILES/dotfiles.code-workspace"
     else 
         echo "This system does not have vscode on path."
