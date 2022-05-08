@@ -1,6 +1,6 @@
 # Core aliases
 alias vim="nvim"
-alias top="btop"
+alias top="bpytop"
 
 ## Refreshing things
 alias reloadzsh="source ~/.zshrc"
@@ -22,15 +22,13 @@ alias -s md=code
 alias -s py=code
 alias -s ipynb=code
 
-## Jupyter book
-alias jbb="jupyter-book build"
+# script for making new myst markdown files
+alias new_markdown="$CONDA_PYTHON_EXE $ZSH_DIR/new_markdown.py"
+alias nmd="new_markdown"
 
-jbc () {
-    jupyter-book clean $1 --all
-}
-
-alias jt="jupytext"
+alias js="jupytext --sync"
 
 alias new_project="cookiecutter gh:awray3/new-project-cookiecutter"
 
 alias ls="pls"
+alias l="ls"
