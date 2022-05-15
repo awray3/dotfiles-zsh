@@ -23,7 +23,9 @@ alias -s py=code
 alias -s ipynb=code
 
 # script for making new myst markdown files
-alias new_markdown="$CONDA_PYTHON_EXE $ZSH_DIR/new_markdown.py"
+new_markdown () {
+    $CONDA_PYTHON_EXE $ZSH_DIR/new_markdown.py $@
+}
 alias nmd="new_markdown"
 
 alias js="jupytext --sync"
