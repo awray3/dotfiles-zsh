@@ -9,9 +9,7 @@
 # z
 # conda-zsh-completion
 # pipx
-# poetry
 # kitty
-# ranger
 # local-only config
 
 
@@ -64,26 +62,10 @@ else
   fi
 fi
 
-# Set up Poetry
-if [[ -d "$HOME/.poetry/bin" ]]
-then 
-  export PATH="$HOME/.poetry/bin:$PATH"
-else
-  if [[ -v DEBUG_CONFIG_FLAG ]]
-  then echo "Poetry not installed."
-  fi
-fi
-
 ## Ripgrep
 if ! command -v rg &> /dev/null && [[ -v DEBUG_CONFIG_FLAG ]]
 then
   echo "Missing ripgrep. You can probably sudo apt-get ripgrep or brew install ripgrep."
-fi
-
-# Ranger
-if command -v ranger &> /dev/null
-then
-    alias rangerconf="vim $CONFIG/ranger/rifle.conf"
 fi
 
 ## zsh-autosuggestions
