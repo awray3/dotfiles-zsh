@@ -1,8 +1,8 @@
-import sys
 import argparse
 import subprocess
-from pathlib import Path
+import sys
 from dataclasses import dataclass
+from pathlib import Path
 from typing import Optional
 
 
