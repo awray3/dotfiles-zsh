@@ -30,6 +30,14 @@ new_markdown () {
 }
 alias nmd="new_markdown"
 
+jt () {
+    if command -v jupytext &>/dev/null
+    then
+        jupytext $@
+    else
+        echo "Jupytext not found."
+    fi
+}
 alias js="jupytext --sync"
 
 alias new_project="cookiecutter gh:awray3/new-project-cookiecutter"
@@ -40,6 +48,19 @@ alias new_project="cookiecutter gh:awray3/new-project-cookiecutter"
 kernel_install () {
     ipython kernel install --user --name="$CONDA_DEFAULT_ENV"
 }
+
+jupyter_list_kernels () {
+
+    if command -v jupyter &>/dev/null
+    then
+        jupyter kernelspec list
+    else
+        echo "Jupyter command not found."
+        echo "Check that it is installed in your venv."
+    fi
+}
+alias jkl="jupyter_list_kernels"
+
 
 alias ls="pls"
 alias l="ls"
