@@ -39,3 +39,14 @@ else
         echo "direnv not installed."
     fi
 fi
+
+# set up zsh syntax highlighting
+# NOTE: This may need to come last after all other things are sourced?
+if ! [[ -d "$ZSH_DIR/zsh-syntax-highlighting" ]]
+then
+    echo "zsh-syntax-highlighting not found. cloning."
+    git clone \
+    https://github.com/zsh-users/zsh-syntax-highlighting.git \
+    $ZSH_DIR/zsh-syntax-highlighting
+fi
+source $ZSH_DIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
