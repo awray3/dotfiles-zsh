@@ -17,7 +17,7 @@ source $ZSH_DIR/aliases.zsh
 source $ZSH_DIR/fzf-settings.zsh
 source $ZSH_DIR/pre-omz.zsh
 
-plugins=(git brew conda-zsh-completion vi-mode)
+plugins=(brew conda-zsh-completion vi-mode)
 
 # enables vim keybindings
 bindkey -v

@@ -17,6 +17,7 @@ con () {
 
 . $ZSH_DIR/jupyter.zsh
 . $ZSH_DIR/conda.zsh
+. $ZSH_DIR/git.zsh
 
 alias ls="pls"
 alias l="ls"
