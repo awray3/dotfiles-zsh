@@ -2,12 +2,12 @@
 # idea for improvement: if conda env is active,
 # automatically use that kernel instead of asking.
 new_markdown () {
-    $CONDA_PYTHON_EXE $ZSH_DIR/new_markdown.py $@
+    $CONDA_PYTHON_EXE $ZSH/scripts/new_markdown.py $@
 }
 alias nmd="new_markdown"
 
 jt () {
-    if command -v jupytext &>/dev/null
+    if command_on_path jupytext
     then
         jupytext $@
     else
@@ -27,7 +27,7 @@ kernel_install () {
 
 jupyter_list_kernels () {
 
-    if command -v jupyter &>/dev/null
+    if command_on_path jupyter
     then
         jupyter kernelspec list
     else
@@ -35,4 +35,4 @@ jupyter_list_kernels () {
         echo "Check that it is installed in your venv."
     fi
 }
-alias jkl="jupyter_list_kernels"
+alias jls="jupyter_list_kernels"
