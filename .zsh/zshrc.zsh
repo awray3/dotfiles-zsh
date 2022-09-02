@@ -67,8 +67,8 @@ con () {
 . $ZSH/aliases/git.zsh
 . $ZSH/aliases/fzf-settings.zsh
 
-alias ls="pls"
-alias l="ls"
+alias ls="lsd"
+alias l="ls -la"
 
 # sets vi keybindings on the command line
 bindkey -v
