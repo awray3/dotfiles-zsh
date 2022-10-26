@@ -68,7 +68,10 @@ con () {
 . $ZSH/aliases/fzf-settings.zsh
 
 alias ls="lsd"
-alias l="ls -la"
+alias l="ls -l"
+alias la="ls -la"
+
+alias cl="clear"
 
 # sets vi keybindings on the command line
 bindkey -v
