@@ -32,3 +32,5 @@ alias gs=gst
 
 alias gr='git restore'
 alias grs='git restore --staged'
+
+alias lg='lazygit'

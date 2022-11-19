@@ -73,6 +73,8 @@ alias la="ls -la"
 
 alias cl="clear"
 
+alias cat="bat -p"
+
 # sets vi keybindings on the command line
 bindkey -v
 
