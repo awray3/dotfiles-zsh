@@ -28,3 +28,7 @@ alias gds='gd --staged'
 
 alias gss='git status -sb'
 alias gst='git status'
+alias gs=gst
+
+alias gr='git restore'
+alias grs='git restore --staged'
