@@ -67,7 +67,7 @@ con () {
 . $ZSH/aliases/git.zsh
 . $ZSH/aliases/fzf-settings.zsh
 
-alias ls="lsd"
+alias ls="lsd --config-file $ZSH/lsd.yaml"
 alias l="ls -l"
 alias la="ls -la"
 
