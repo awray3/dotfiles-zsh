@@ -5,7 +5,7 @@ alias ga='git add'
 alias gau='git add --update'
 alias gc='git commit -v'
 alias gc!='git commit -v --amend'
-alias gcn!='git commit -v --no-edit --amend'
+alias gcan!='git commit -v --no-edit --amend'
 
 alias gcb='git checkout -b'
 alias gb='git branch'
