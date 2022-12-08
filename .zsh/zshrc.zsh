@@ -131,9 +131,9 @@ then
   echo "nvm is not installed."
 fi
 
-if command_on_path starship
+if command_on_path oh-my-posh && [ $TERM_PROGRAM != "Apple_Terminal" ]
 then
-    eval "$(starship init zsh)"
+  eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/bubbles.omp.json)"
 fi
 
 # Set up Mcfly
