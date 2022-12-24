@@ -30,13 +30,14 @@ command_on_path () {
 
 # Set default editor to nvim
 export EDITOR='nvim'
-export VISUAL='nvim'
+export VISUAL='neovide'
 
 # directory aliases
 # export ZSH=$HOME/.oh-my-zsh
 export ZSH=$HOME/.zsh
 export ZSH_PLUGINS=$ZSH/plugins
 export NEOHOME=$HOME/.config/nvim
+export KITTYHOME=$HOME/.config/kitty
 export DOTFILES=$HOME/dotfiles
 
 #        _ _                     
@@ -46,12 +47,15 @@ export DOTFILES=$HOME/dotfiles
 #  \__,_|_|_|\__,_|___/\___||___/
 
 # Core aliases
-alias vim="nvim"
+alias vim="neovide"
 alias top="bpytop"
 
 ## Refreshing things
 alias reloadzsh="source ~/.zshrc"
-alias reloadvim="nvim +PackerSync"
+alias vims="nvim +PackerSync"
+
+# experimental jukit alias 
+alias jukit_kitty="kitty --listen-on=unix:@'$(date +%s%N)' -o allow_remote_control=yes"
 
 ## Opening configs
 con () {
@@ -216,7 +220,9 @@ source $Z_SCRIPT_FILE
 # | (_| (_) | | | | | | |_) | |  __/ |_| | (_) | | | \__ \
 #  \___\___/|_| |_| |_| .__/|_|\___|\__|_|\___/|_| |_|___/
 #                     |_|                                 
-
+# I think this makes sure that anything installed by homebrew
+# gets loaded by the system zsh.
+fpath=($HOMEBREW_PREFIX/share/zsh/site-functions $fpath)
 
 autoload -U compinit && compinit
 autoload -U bashcompinit && bashcompinit
