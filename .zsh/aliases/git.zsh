@@ -4,15 +4,32 @@
 alias ga='git add'
 alias gau='git add --update'
 alias gc='git commit -v'
-alias gc!='git commit -v --amend'
-alias gcan!='git commit -v --no-edit --amend'
+alias gc='git commit -v --amend'
+alias gcan='git commit -v --no-edit --amend'
+alias gca='git commit -v --amend'
 
 alias gcb='git checkout -b'
 alias gb='git branch'
 alias gbd='git branch -d'
 alias gco='git checkout'
 
-alias glo='git log --oneline --decorate'
+
+git_log() {
+    
+    DEFAULT_LINES=5
+    num_lines=$1
+    # if no number is passed in, set it to the default.
+    if [ -z "$num_lines" ]
+    then
+       num_lines=$DEFAULT_LINES
+    else
+        shift
+    fi
+
+   git log --oneline --decorate --max-count=$num_lines $@
+}
+
+alias glo=git_log
 alias glol="git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'"
 alias glog='git log --oneline --decorate --graph'
 alias gpr='git pull --rebase'
