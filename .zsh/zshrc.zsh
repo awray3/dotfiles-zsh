@@ -21,6 +21,9 @@ command_on_path () {
   command -v $1 &>/dev/null
 }
 
+# makes tab complete case-insensitive
+zstyle ":completion:*" matcher-list "m:{a-z}={A-Z}" "r:|[._-]=* r:|=*" "l:|=* r:|=*"
+
 #                             _       
 #   _____  ___ __   ___  _ __| |_ ___ 
 #  / _ \ \/ / '_ \ / _ \| '__| __/ __|
