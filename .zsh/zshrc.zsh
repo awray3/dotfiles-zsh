@@ -50,6 +50,7 @@ export DOTFILES=$HOME/dotfiles
 #  \__,_|_|_|\__,_|___/\___||___/
 
 # Core aliases
+alias h="hx"
 alias vim="neovide"
 alias top="bpytop"
 
