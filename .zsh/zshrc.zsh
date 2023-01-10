@@ -220,8 +220,12 @@ fi
 source $Z_SCRIPT_FILE
 
 # Source zellij completions
-fpath+=$ZSH/completions/zellij.zsh
-source $ZSH_PLUGINS/zellij.zsh
+if command_on_path zellij
+then
+  export ZELLIJ_HOME=$HOME/.zellij
+  fpath+=$ZELLIJ_HOME/configs/completion.zsh
+  source $ZELLIJ_HOME/configs/.zshrc
+fi
 
 #                            _      _   _                 
 #   ___ ___  _ __ ___  _ __ | | ___| |_(_) ___  _ __  ___ 
