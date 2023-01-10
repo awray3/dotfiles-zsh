@@ -90,6 +90,8 @@ bindkey -v
 # I think this makes completion case insensitive
 setopt no_list_ambiguous
 
+alias tree="tree -I '__pycache__' -I '*.egg-info'"
+
 #                                                _     
 #   ___ ___  _ __ ___  _ __ ___   __ _ _ __   __| |___ 
 #  / __/ _ \| '_ ` _ \| '_ ` _ \ / _` | '_ \ / _` / __|
@@ -217,6 +219,9 @@ then
 fi
 source $Z_SCRIPT_FILE
 
+# Source zellij completions
+fpath+=$ZSH/completions/zellij.zsh
+source $ZSH_PLUGINS/zellij.zsh
 
 #                            _      _   _                 
 #   ___ ___  _ __ ___  _ __ | | ___| |_(_) ___  _ __  ___ 
@@ -249,6 +254,7 @@ if command_on_path aws
 then 
     complete -C '/usr/local/bin/aws_completer' aws
 fi
+
 
 #                 _ 
 #   ___ _ __   __| |
