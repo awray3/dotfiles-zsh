@@ -32,8 +32,8 @@ zstyle ":completion:*" matcher-list "m:{a-z}={A-Z}" "r:|[._-]=* r:|=*" "l:|=* r:
 #           |_|                       
 
 # Set default editor to nvim
-export EDITOR='nvim'
-export VISUAL='neovide'
+export EDITOR='hx'
+export VISUAL='hx'
 
 # directory aliases
 # export ZSH=$HOME/.oh-my-zsh
@@ -42,6 +42,7 @@ export ZSH_PLUGINS=$ZSH/plugins
 export NEOHOME=$HOME/.config/nvim
 export KITTYHOME=$HOME/.config/kitty
 export DOTFILES=$HOME/dotfiles
+export ZELLIJ_CONFIG_DIR=$HOME/.zellij
 
 #        _ _                     
 #   __ _| (_) __ _ ___  ___  ___ 
