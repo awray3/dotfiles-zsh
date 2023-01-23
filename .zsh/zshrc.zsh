@@ -11,6 +11,9 @@ then
   zmodload zsh/zprof
 fi
 
+# turn off terminal bell 
+set bell-style none
+
 #        _   _ _     
 #  _   _| |_(_) |___ 
 # | | | | __| | / __|
@@ -32,8 +35,8 @@ zstyle ":completion:*" matcher-list "m:{a-z}={A-Z}" "r:|[._-]=* r:|=*" "l:|=* r:
 #           |_|                       
 
 # Set default editor to nvim
-export EDITOR='hx'
-export VISUAL='hx'
+export EDITOR='nvim'
+export VISUAL='nvim'
 
 # directory aliases
 # export ZSH=$HOME/.oh-my-zsh
@@ -52,7 +55,10 @@ export ZELLIJ_CONFIG_DIR=$HOME/.zellij
 
 # Core aliases
 alias h="hx"
-alias vim="neovide"
+# alias vim="nvim"
+vim () {
+  docker run --rm -it -w /edit -v `pwd`:/edit --name=neovim awray3/neovim:main
+}
 alias top="bpytop"
 
 ## Refreshing things
