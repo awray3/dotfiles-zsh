@@ -10,6 +10,7 @@ alias gcan='git commit -v --no-edit --amend'
 alias gcb='git checkout -b'
 alias gb='git branch'
 alias gbd='git branch -d'
+alias gbD='git branch -D'
 alias gco='git checkout'
 
 

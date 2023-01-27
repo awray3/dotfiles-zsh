@@ -55,15 +55,10 @@ export ZELLIJ_CONFIG_DIR=$HOME/.zellij
 
 # Core aliases
 alias h="hx"
-# alias vim="nvim"
-vim () {
-  docker run --rm -it -w /edit -v `pwd`:/edit --name=neovim awray3/neovim:main
-}
 alias top="bpytop"
 
 ## Refreshing things
 alias reloadzsh="source ~/.zshrc"
-alias vims="nvim +PackerSync"
 
 # experimental jukit alias 
 alias jukit_kitty="kitty --listen-on=unix:@'$(date +%s%N)' -o allow_remote_control=yes"
