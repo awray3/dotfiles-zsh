@@ -1,7 +1,7 @@
 #!/usr/bin/env /bin/bash
 
 # neovim config version
-NEOVIM_TAG=0.2.0
+NEOVIM_TAG=0.2.1
 
 if [[ "$(pwd)" == "$HOME" ]]; then
     echo "not opening in home directory."
