@@ -5,6 +5,7 @@ NEOVIM_TAG=0.2.0
 
 if [[ "$(pwd)" == "$HOME" ]]; then
     echo "not opening in home directory."
+    exit 1
 fi
 
 SUB_NAME=$(basename $(pwd))
