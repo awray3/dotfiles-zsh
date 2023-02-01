@@ -3,6 +3,10 @@
 # neovim config version
 NEOVIM_TAG=0.2.0
 
+if [[ "$(pwd)" == "$HOME" ]]; then
+    echo "not opening in home directory."
+fi
+
 SUB_NAME=$(basename $(pwd))
 
 # Container name is hash neovim-<sub_name>-hash,
