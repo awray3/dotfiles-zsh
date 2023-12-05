@@ -35,8 +35,8 @@ zstyle ":completion:*" matcher-list "m:{a-z}={A-Z}" "r:|[._-]=* r:|=*" "l:|=* r:
 #           |_|                       
 
 # Set default editor to nvim
-export EDITOR='nvim'
-export VISUAL='nvim'
+export EDITOR='lvim'
+export VISUAL='lvim'
 
 # directory aliases
 # export ZSH=$HOME/.oh-my-zsh
