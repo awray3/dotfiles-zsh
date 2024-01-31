@@ -273,3 +273,4 @@ if [[ -v DEBUG_CONFIG_FLAG ]]
 then 
   zprof
 fi
+

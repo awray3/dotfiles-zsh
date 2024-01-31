@@ -9,5 +9,3 @@ alias mrm="mamba env remove -n"
 alias mls="mamba env list"
 alias mcr="mamba create -n"
 alias mad="mamba deactivate"
-
-alias mal="mamba env list"
