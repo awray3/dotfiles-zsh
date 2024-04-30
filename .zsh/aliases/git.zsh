@@ -72,13 +72,20 @@ alias lg='lazygit'
 
 # DVC aliases
 d() {
+  output=$(dvc status 2>&1)
+  if [[ $? -eq 0 ]]; then
     if [[ $# -eq 0 ]]; then
-        dvc status
+      echo "$output"
     else
-        dvc "$@"
+      dvc "$@"
     fi
+  else
+    echo "Not in a DVC repo."
+  fi
 }
 
+alias da='dvc add'
+alias dc='dvc commit'
 alias dst='dvc status'
 alias dr='dvc repro --no-commit'
 alias drc='dvc repro'
