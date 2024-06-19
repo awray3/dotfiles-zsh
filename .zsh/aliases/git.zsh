@@ -52,13 +52,35 @@ alias grmc='git rm --cached'
 
 # diff settings
 
-diff_sans_notebook() {
-  git diff --name-only $@ -- '*.ipynb' | \
-    xargs -I {} echo 'modified: {} (output skipped)'
+diff_with_notebooks() {
+  
+  
+  if [[ "$1" == "--no-nb" ]]; then
+    # Remove the flag from the arguments list
+    shift
+
+    # Message indicating skipping of .ipynb diffs
+    git diff --name-only $@ -- '*.ipynb' | \
+      xargs -I {} echo 'modified: {} (output skipped)'
+  else
+    local git_root=$(git rev-parse --show-toplevel)  # Find the root directory of the Git repository
+    local original_dir="$(pwd)" # Store the original directory
+
+    cd "$git_root" || return  # Change to the root directory of the Git repository 
+    
+    # Diff for .ipynb files using nbdime
+    git diff --name-only $@ -- '*.ipynb' | \
+      xargs -I {} nbdiff {} -OMAD
+
+    cd "$original_dir"
+  fi
+
+  # Diff for non-.ipynb files using regular git diff
   git diff $@ -- ':(exclude)*.ipynb'; 
 }
 
-alias gd="diff_sans_notebook"
+alias gd="diff_with_notebooks"
+alias gdn="diff_with_notebooks --no-nb"
 alias gds='gd --staged'
 
 alias gss='git status -sb'
@@ -91,3 +113,5 @@ alias dr='dvc repro --no-commit'
 alias drc='dvc repro'
 alias dco='dvc checkout'
 alias dgc='dvc gc'
+alias dpu='dvc push'
+alias dpl='dvc pull'
