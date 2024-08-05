@@ -86,6 +86,22 @@ alias cl="clear"
 alias cat="bat -p"
 alias j="just"
 
+# vcsh dump all env vars to .env
+dump_vcsh_vars() {
+  prefix="VCSH_"
+
+  # dump all vcsh vars
+  for var in ${(k)parameters}; do
+      if [[ $var == $prefix* ]]; then
+          echo "$var=${(P)var}"
+      fi
+  done
+
+  #also git_dir
+  GIT_DIR="$VCSH_REPO_D/$VCSH_REPO_NAME.git"
+  echo "GIT_DIR=${GIT_DIR}"
+}
+
 # sets vi keybindings on the command line
 bindkey -v
 
