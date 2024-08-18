@@ -143,12 +143,12 @@ then
 fi
 
 # Set up untracked files
-LOCAL_ONLY_CONFIG="$HOME/.local_only"
-if [[ -d "$LOCAL_ONLY_CONFIG" ]]
+LOCAL_CONFIGS="$HOME/.local/config/"
+if [[ -d "$LOCAL_CONFIGS" ]]
 then
-    if [[ -f "$LOCAL_ONLY_CONFIG/zshrc" ]]
+    if [[ -f "$LOCAL_CONFIGS/zshrc.zsh" ]]
     then 
-        source $LOCAL_ONLY_CONFIG/zshrc
+        source $LOCAL_CONFIGS/zshrc.zsh
     fi
 fi
 
