@@ -35,8 +35,8 @@ zstyle ":completion:*" matcher-list "m:{a-z}={A-Z}" "r:|[._-]=* r:|=*" "l:|=* r:
 #           |_|                       
 
 # Set default editor to nvim
-export EDITOR='lvim'
-export VISUAL='lvim'
+export EDITOR='nvim'
+export VISUAL='nvim'
 
 # directory aliases
 # export ZSH=$HOME/.oh-my-zsh
@@ -84,7 +84,15 @@ alias la="ls -la"
 alias cl="clear"
 
 alias cat="bat -p"
-alias j="just"
+
+
+j() {
+  if [ $# -eq 0 ]; then
+    just --list
+  else
+    just "$@"
+  fi
+}
 
 # vcsh dump all env vars to .env
 dump_vcsh_vars() {
@@ -259,6 +267,10 @@ autoload -U compinit && compinit
 autoload -U bashcompinit && bashcompinit
 autoload -Uz complete
 
+# propagate completions to alias functions
+compdef _just j
+compdef _dvc d
+compdef _git g
 
 ## for pipx
 if command_on_path pipx
